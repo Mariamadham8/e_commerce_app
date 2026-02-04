@@ -12,8 +12,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final AppRouter appRouter = AppRouter();
+    return MaterialApp.router(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         bottomAppBarTheme: BottomAppBarThemeData(
@@ -23,7 +25,8 @@ class MyApp extends StatelessWidget {
           padding: EdgeInsets.all(8),
         ),
       ),
-      home: const LoginScreen(),
+
+      routerConfig: appRouter.routes,
     );
   }
 }

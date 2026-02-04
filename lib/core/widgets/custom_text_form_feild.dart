@@ -2,7 +2,7 @@ import 'package:e_commerce_app/core/theming/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatefulWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String hintText;
   final String? labelText;
   final TextInputType keyboardType;
@@ -12,7 +12,7 @@ class CustomTextFormField extends StatefulWidget {
 
   const CustomTextFormField({
     super.key,
-    required this.controller,
+    this.controller,
     required this.hintText,
     this.labelText,
     this.keyboardType = TextInputType.text,
