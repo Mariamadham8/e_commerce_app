@@ -13,24 +13,30 @@ class TapBar extends StatelessWidget {
         children: [
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-            ),
+            padding: const EdgeInsets.all(6),
+
             child: TabBar(
-              indicatorColor: Colors.transparent,
+              dividerColor: Colors.transparent,
+              indicatorSize: TabBarIndicatorSize.label,
               indicator: BoxDecoration(
                 shape: BoxShape.rectangle,
                 color: AppColors.blue,
-                borderRadius: BorderRadius.circular(2),
+                borderRadius: BorderRadius.circular(12),
               ),
               labelColor: Colors.white,
               unselectedLabelColor: Colors.black,
+              labelStyle: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
+              ),
+              padding: EdgeInsets.zero,
+              labelPadding: const EdgeInsets.symmetric(horizontal: 8),
+
               tabs: const [
-                Tab(text: 'All'),
-                Tab(text: 'Tshirts'),
-                Tab(text: 'Jeans'),
-                Tab(text: 'Shoes'),
+                Tab(child: _CustomTab(text: 'All')),
+                Tab(child: _CustomTab(text: 'Tshirts')),
+                Tab(child: _CustomTab(text: 'Jeans')),
+                Tab(child: _CustomTab(text: 'Shoes')),
               ],
             ),
           ),
@@ -50,6 +56,23 @@ class TapBar extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _CustomTab extends StatelessWidget {
+  final String text;
+  const _CustomTab({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.grey.shade300),
+      ),
+      child: Text(text),
     );
   }
 }

@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         bottomAppBarTheme: BottomAppBarThemeData(
           shape: CircularNotchedRectangle(),
           elevation: 3,
-          color: Colors.white10,
+          color: Colors.white,
           padding: EdgeInsets.all(8),
         ),
       ),

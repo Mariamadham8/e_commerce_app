@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/features/auth/views/login_view.dart';
 import 'package:e_commerce_app/features/auth/views/signup_view.dart';
-import 'package:e_commerce_app/features/home/home_view.dart';
+import 'package:e_commerce_app/features/home/views/home_view.dart';
+import 'package:e_commerce_app/features/home/views/item_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -24,7 +25,7 @@ class AppRouter {
 
       GoRoute(
         path: itemDetails,
-        builder: (context, state) => const ItemDetailsScreen(),
+        builder: (context, state) => const ItemDetailsView(),
       ),
 
       GoRoute(
@@ -46,24 +47,6 @@ class AppRouter {
 }
 
 /* =================== Screens Placeholder =================== */
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("Home Screen")));
-  }
-}
-
-class ItemDetailsScreen extends StatelessWidget {
-  const ItemDetailsScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("Item Details Screen")));
-  }
-}
 
 class CartDetailsScreen extends StatelessWidget {
   const CartDetailsScreen({super.key});
