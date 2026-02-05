@@ -31,6 +31,7 @@ class _HomeViewState extends State<HomeView> {
             : _pages[_currentIndex],
 
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white,
           currentIndex: _currentIndex,
           onTap: (index) {
             setState(() {

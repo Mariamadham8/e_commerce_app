@@ -1,6 +1,8 @@
+import 'package:e_commerce_app/core/routing/app_router.dart';
 import 'package:e_commerce_app/core/theming/app_colors.dart';
 import 'package:e_commerce_app/core/theming/app_fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'account_card.dart';
 
 class AccountInfoBody extends StatelessWidget {
@@ -27,7 +29,9 @@ class AccountInfoBody extends StatelessWidget {
         AccountCard(
           icon: Icons.home_outlined,
           title: "Address Book",
-          onTap: () {},
+          onTap: () {
+            context.push(AppRouter.addressInfo);
+          },
         ),
         AccountCard(icon: Icons.help_outline, title: "FAQs", onTap: () {}),
         AccountCard(
