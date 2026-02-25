@@ -22,20 +22,38 @@ class ItemCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Image.network(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWkja0UFm0NHAMaztYI1fCOQY3OR9kdv_Maw&s',
-                fit: BoxFit.cover,
-                height: 140,
+            Expanded(
+              // ✅ الصورة تاخد الباقي
+              child: ClipRRect(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(4)),
+                child: Image.network(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWkja0UFm0NHAMaztYI1fCOQY3OR9kdv_Maw&s',
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ),
               ),
             ),
-
-            Gap(8),
-            Text('Shoes', style: AppFonts.font16w600),
-            Gap(8),
-            Text(
-              '\$ 1,190',
-              style: AppFonts.font16w500.copyWith(color: AppColors.grey),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min, // ✅ متاخدش زيادة
+                children: [
+                  Text(
+                    'Shoes',
+                    style: AppFonts.font16w600,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                  Gap(4),
+                  Text(
+                    '\$ 1,190',
+                    style: AppFonts.font16w500.copyWith(color: AppColors.grey),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

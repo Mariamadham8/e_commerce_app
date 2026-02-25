@@ -70,9 +70,16 @@ class AddedItmeCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('\$ 1,190', style: AppFonts.font16w600),
+                    Flexible(
+                      child: Text(
+                        '\$ 1,190',
+                        style: AppFonts.font16w600,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
 
                     Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         _buildQuantityButton(icon: Icons.add, onPressed: () {}),
 
@@ -104,8 +111,9 @@ class AddedItmeCard extends StatelessWidget {
   }) {
     return IconButton(
       style: ButtonStyle(
-        padding: MaterialStateProperty.all(const EdgeInsets.all(6)),
-        minimumSize: MaterialStateProperty.all(const Size(34, 34)),
+        padding: MaterialStateProperty.all(const EdgeInsets.all(4)),
+        minimumSize: MaterialStateProperty.all(const Size(30, 30)),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         side: MaterialStateProperty.all(
           BorderSide(color: AppColors.grey, width: 1),
         ),
@@ -114,7 +122,7 @@ class AddedItmeCard extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      icon: Icon(icon, size: 18),
+      icon: Icon(icon, size: 16),
     );
   }
 }

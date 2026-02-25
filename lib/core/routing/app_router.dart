@@ -15,7 +15,7 @@ class AppRouter {
   static const accountInfo = '/accountInfo';
 
   final GoRouter routes = GoRouter(
-    initialLocation: login,
+    initialLocation: home,
     routes: [
       GoRoute(path: login, builder: (context, state) => const LoginScreen()),
 
